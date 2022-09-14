@@ -1,0 +1,35 @@
+{
+  "name": "blockchain-poc",
+  "version": "1.0.0",
+  "description": "Blockchain POC",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gayelabouimad/Blockchain-POC.git"
+  },
+  "author": "Gayel Abou Imad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gayelabouimad/Blockchain-POC/issues"
+  },
+  "homepage": "https://github.com/Gayelabouimad/Blockchain-POC#readme",
+  "dependencies": {
+    "debug": "^4.1.1",
+    "elliptic": "^6.5.4"
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.6",
+    "eslint": "^8.8.0",
+    "eslint-config-standard": "^17.0.0-0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "mocha": "^10.0.0",
+    "nyc": "^15.1.0",
+    "prettier": "^2.7.1"
+  }
+}
