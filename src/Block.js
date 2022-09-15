@@ -2,11 +2,7 @@ const crypto = require("crypto");
 const debug = require("debug")("savjeecoin:blockchain");
 
 class Block {
-  /**
-   * @param {number} timestamp
-   * @param {Transaction[]} transactions
-   * @param {string} previousHash
-   */
+
   constructor(timestamp, transactions, previousHash = "") {
     this.previousHash = previousHash;
     this.timestamp = timestamp;
@@ -15,12 +11,7 @@ class Block {
     this.hash = this.calculateHash();
   }
 
-  /**
-   * Returns the SHA256 of this block (by processing all the data stored
-   * inside this block)
-   *
-   * @returns {string}
-   */
+// Returns the SHA256 of this block (by processing all the data stored inside this block)
   calculateHash() {
     return crypto
       .createHash("sha256")
@@ -33,12 +24,8 @@ class Block {
       .digest("hex");
   }
 
-  /**
-   * Starts the mining process on the block. It changes the 'nonce' until the hash
-   * of the block starts with enough zeros (= difficulty)
-   *
-   * @param {number} difficulty
-   */
+  // Starts the mining process on the block. 
+  // It changes the 'nonce' until the hash of the block starts with enough zeros (= difficulty)
   mineBlock(difficulty) {
     while (
       this.hash.substring(0, difficulty) !== Array(difficulty + 1).join("0")
@@ -50,12 +37,9 @@ class Block {
     debug(`Block mined: ${this.hash}`);
   }
 
-  /**
-   * Validates all the transactions inside this block (signature + hash) and
-   * returns true if everything checks out. False if the block is invalid.
-   *
-   * @returns {boolean}
-   */
+  // Validates all the transactions inside this block (signature + hash) and returns true if everything checks out. 
+  // False if the block is invalid.
+
   hasValidTransactions() {
     for (const tx of this.transactions) {
       if (!tx.isValid()) {
